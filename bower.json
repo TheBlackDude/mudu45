@@ -1,0 +1,17 @@
+{
+  "name": "mysite",
+  "authors": [
+    "Osman Jalloh <omudu45@hotmail.com>"
+  ],
+  "description": "this is my personal site",
+  "main": "",
+  "license": "MIT",
+  "homepage": "/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
