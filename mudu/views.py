@@ -1,18 +1,19 @@
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import About, Contact
 from .serializers import AboutSerializer, ContactSerializer
 
-@api_view(['GET', 'POST'])
-def api(request):
-	""" List my Info, or Contact Me """
-	if request.method == 'GET':
+class Api(APIView):
+	"""
+	List My Info, or Contact Me.
+	"""
+	def get(self, request):
 		about = About.objects.all()
 		serializer = AboutSerializer(about, many=True)
 		return Response(serializer.data)
 
-	elif request.method == 'POST':
+	def post(self, request):
 		serializer = ContactSerializer(data=request.data)
 		if serializer.is_valid():
 			serializer.save()
