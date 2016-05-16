@@ -4,12 +4,11 @@
     "Osman Jalloh <omudu45@hotmail.com>"
   ],
   "description": "this is my personal site",
-  "main": "",
+  "main": "mudu/templates/mudu/index.html",
   "license": "MIT",
-  "homepage": "/",
+  "homepage": "mudu/templates/mudu/index.html",
   "private": true,
   "ignore": [
-    "**/.*",
     "bower_components",
     "test",
     "tests"
