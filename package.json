@@ -1,0 +1,8 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "This is My Personal Site",
+  "main": "mudu/templates/mudu/index.html",
+  "author": "Osman Jalloh",
+  "license": "MIT"
+}
