@@ -1,8 +1,19 @@
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.utils.decorators import method_decorator
+from django.views.generic.base import TemplateView
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import About, Contact
 from .serializers import AboutSerializer, ContactSerializer
+
+class IndexPage(TemplateView):
+	""" render the index page """
+	template_name = 'mudu/index.html'
+
+	@method_decorator(ensure_csrf_cookie)
+	def dispatch(self, *args, **kwargs):
+		return super().dispatch(*args, **kwargs)
 
 class Api(APIView):
 	"""
