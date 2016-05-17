@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="mudu">
+<head>
+	<title>MuDu45</title>
+	<base href="/"></base>
+	{% include 'style.html' %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <div class="container-fluid">
+        <h1>Welcome To My Site</h1>
+    	<div class="row">
+    		<ui-view></ui-view>
+    	</div>
+    </div>
+
+    {% include 'js.html' %}
+</body>
+</html>
