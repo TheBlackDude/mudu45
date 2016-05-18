@@ -7,10 +7,6 @@ module.exports = function (grunt) {
 			javascript: {
 				src: 'mudu/static/javascript/*.js',
 				dest: 'mudu/static/build/scripts.js'
-			},
-			css: {
-				src: 'mudu/static/css/*.css',
-				dest: 'mudu/static/build/styles.css'
 			}
 		},
 		uglify: {
@@ -18,30 +14,33 @@ module.exports = function (grunt) {
 				files: {
 					'mudu/static/build/scripts.js': '<%= concat.javascript.dest %>'
 				}
-			},
-			css: {
+			}
+		},
+		cssmin: {
+			combine: {
 				files: {
-					'mudu/static/build/styles.css': '<%= concat.css.dest %>'
+					'mudu/static/build/styles.css': ['mudu/static/css/*.css']
 				}
 			}
 		},
-		/*watch: {
+		watch: {
 			javascript: {
 				files: ['<%= concat.javascript.src %>'],
 				tasks: ['concat', 'uglify']
 			},
-			css: {
-				files: ['<%= concat.css.src %>'],
-				tasks: ['concat', 'uglify']
+			combine: {
+				files: ['mudu/static/css/*.css'],
+				tasks: ['cssmin']
 			}
-		}*/
+		}
 	});
 
 	// load Tasks
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	//grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// register Tasks
-	grunt.registerTask('default', ['concat', 'uglify']);
+	grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'watch']);
 };
