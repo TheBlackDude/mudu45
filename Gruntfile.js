@@ -12,14 +12,14 @@ module.exports = function (grunt) {
 		uglify: {
 			javascript: {
 				files: {
-					'mudu/static/build/scripts.js': '<%= concat.javascript.dest %>'
+					'mudu/static/build/scripts.min.js': '<%= concat.javascript.dest %>'
 				}
 			}
 		},
 		cssmin: {
 			combine: {
 				files: {
-					'mudu/static/build/styles.css': ['mudu/static/css/*.css']
+					'mudu/static/build/styles.min.css': ['mudu/static/css/*.css']
 				}
 			}
 		},

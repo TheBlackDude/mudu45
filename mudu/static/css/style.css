@@ -1,3 +1,29 @@
 body {
-	padding: 40px;
+	padding-top: 30px;
+	background: #AAA
+}
+
+.home {
+	background-image: url('../img/engineering.jpg');
+	background-attachment: fixed;
+	background-position: 100%;
+	background-repeat: left;
+	height: 600px;
+	color: #C45;
+	text-align: center;
+}
+
+img {
+	width: 200px;
+}
+
+.fa {
+	color: #C45;
+}
+
+footer {
+	padding-top: 5px;
+	background: black;
+	color: white;
+	text-align: center;
 }
