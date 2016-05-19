@@ -25,7 +25,7 @@
 
 				setTimeout(function(){
 					window.location = '/';
-				}, 3000);
+				}, 1000);
 				
 			}).error(function(err) {
 				Snackbar.error(err);
