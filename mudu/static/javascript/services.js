@@ -21,6 +21,8 @@
 				Snackbar.error(error);
 			});
 		}
+
+		return Api;
 	}]);
 
 })();

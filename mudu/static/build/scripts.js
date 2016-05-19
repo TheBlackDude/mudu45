@@ -92,6 +92,15 @@
 (function() {
 	'use strict';
 	angular.module('mudu.controllers')
+	.controller('AboutCtrl', ['$scope', 'Api', function($scope, Api){
+		var vm = this;
+		vm.info = Api.info;
+	}]);
+	
+})();
+(function() {
+	'use strict';
+	angular.module('mudu.controllers')
 	.controller('HomeCtrl', ['$scope', function($scope){
 		var vm = this;
 		vm.text = 'Hi, I am MuDu45 or You Can Call Me TheBlackDude';
@@ -121,6 +130,8 @@
 				Snackbar.error(error);
 			});
 		}
+
+		return Api;
 	}]);
 
 })();
