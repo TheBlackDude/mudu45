@@ -4,6 +4,7 @@ class About(models.Model):
 	name = models.CharField(max_length=100)
 	email = models.EmailField()
 	phone = models.CharField(max_length=100)
+	skills = models.TextField(default='')
 	info = models.TextField(default='')
 
 	class Meta:
