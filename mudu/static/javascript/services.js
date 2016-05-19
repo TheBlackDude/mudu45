@@ -14,11 +14,21 @@
 			});
 		}
 
-		function post(content) {
-			return $http.post('/api/about/', content).success(function(data) {
-				Snackbar.show('message sent successfully');
+		function post(name,email,company,message) {
+			return $http.post('/api/about/', {
+				name: name,
+				email: email,
+				company: company,
+				message: message
+			}).success(function(data) {
+				Snackbar.show('<p id="snackbar">message sent successfully</p>');
+
+				setTimeout(function(){
+					window.location = '/';
+				}, 3000);
+				
 			}).error(function(err) {
-				Snackbar.error(error);
+				Snackbar.error(err);
 			});
 		}
 

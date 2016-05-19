@@ -102,6 +102,20 @@
 (function() {
 	'use strict';
 	angular.module('mudu.controllers')
+	.controller('ContactCtrl', ['$scope', 'Api', function($scope, Api){
+		var vm = this;
+
+		vm.post = post;
+
+		function post() {
+			Api.post(vm.name,vm.email,vm.company,vm.message);
+		}
+
+	}]);
+})();
+(function() {
+	'use strict';
+	angular.module('mudu.controllers')
 	.controller('HomeCtrl', ['$scope', function($scope){
 		var vm = this;
 		vm.text = 'Hi, I am MuDu45 or You Can Call Me TheBlackDude';
@@ -124,11 +138,21 @@
 			});
 		}
 
-		function post(content) {
-			return $http.post('/api/about/', content).success(function(data) {
-				Snackbar.show('message sent successfully');
+		function post(name,email,company,message) {
+			return $http.post('/api/about/', {
+				name: name,
+				email: email,
+				company: company,
+				message: message
+			}).success(function(data) {
+				Snackbar.show('<p id="snackbar">message sent successfully</p>');
+
+				setTimeout(function(){
+					window.location = '/';
+				}, 3000);
+				
 			}).error(function(err) {
-				Snackbar.error(error);
+				Snackbar.error(err);
 			});
 		}
 

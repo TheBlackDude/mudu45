@@ -25,6 +25,12 @@ img {
 	height: 627px;
 }
 
+#snackbar {
+	color: green;
+	font-size: 20px;
+	font-weight: bold;
+}
+
 footer {
 	padding-top: 5px;
 	background: black;
