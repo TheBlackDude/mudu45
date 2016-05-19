@@ -1,6 +1,6 @@
 body {
 	padding-top: 30px;
-	background: #AAA
+	background: #FFF;
 }
 
 .home {
@@ -19,6 +19,10 @@ img {
 
 .fa {
 	color: #C45;
+}
+
+.contact {
+	height: 627px;
 }
 
 footer {
