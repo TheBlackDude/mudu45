@@ -3,7 +3,7 @@ from .models import About, Contact
 
 class AboutModelAdmin(admin.ModelAdmin):
 
-	list_display = ('name', 'email', 'phone', 'info')
+	list_display = ('name', 'email', 'phone', 'skills', 'info')
 
 
 class ContactModelAdmin(admin.ModelAdmin):
