@@ -42,7 +42,7 @@ SECRET_KEY = 'a#@!llid56$elgld-ldls!ldls(lldsl%lslshgnbldt&#)-f&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://mudu45.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
