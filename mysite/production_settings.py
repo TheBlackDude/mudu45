@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.core.exceptions import ImproperlyConfigured
+import dj_database_url
 
+# function for setting environment variables
 def get_env_variable(var_name):
     """GET The environment variable or return exception."""
     try:

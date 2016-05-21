@@ -2,5 +2,6 @@ Django==1.8
 argparse==1.2.1
 djangorestframework==3.3.0
 psycopg2==2.6.1
-gunicorn==19.4.5
+gunicorn
+dj_database_url
 wsgiref==0.1.2
