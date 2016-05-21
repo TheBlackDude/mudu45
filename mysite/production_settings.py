@@ -16,13 +16,13 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 # function for setting environment variables
-def get_env_variable(var_name):
-    """GET The environment variable or return exception."""
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = "Set The {} environment variable".format(var_name)
-        raise ImproperlyConfigured(error_msg)
+#def get_env_variable(var_name):
+#   """GET The environment variable or return exception."""
+#   try:
+#        return os.environ[var_name]
+#    except KeyError:
+#        error_msg = "Set The {} environment variable".format(var_name)
+#        raise ImproperlyConfigured(error_msg)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
