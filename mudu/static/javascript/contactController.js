@@ -8,6 +8,13 @@
 
 		function post() {
 			Api.post(vm.name,vm.email,vm.company,vm.message);
+
+			setTimeout(function(){
+				vm.name = '';
+				vm.email = '';
+				vm.company = '';
+				vm.message = '';
+			}, 100)
 		}
 
 	}]);

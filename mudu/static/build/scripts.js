@@ -109,6 +109,13 @@
 
 		function post() {
 			Api.post(vm.name,vm.email,vm.company,vm.message);
+
+			setTimeout(function(){
+				vm.name = '';
+				vm.email = '';
+				vm.company = '';
+				vm.message = '';
+			}, 100)
 		}
 
 	}]);
@@ -147,9 +154,9 @@
 			}).success(function(data) {
 				Snackbar.show('<p id="snackbar">message sent successfully</p>');
 
-				setTimeout(function(){
+				/*setTimeout(function(){
 					window.location = '/';
-				}, 1000);
+				}, 1000);*/
 				
 			}).error(function(err) {
 				Snackbar.error(err);

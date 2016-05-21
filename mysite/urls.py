@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^$', views.IndexPage.as_view(), name='index'),
     url(r'^api/', include(urls)),
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^gagou/', include(admin.site.urls)),
 ]

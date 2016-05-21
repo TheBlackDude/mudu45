@@ -1,16 +1,28 @@
-<div class="row info" ng-repeat="data in vm.info">
-    <h1 class="text-center">This is Who I am</h1>
-	<div class="col-xs-6 col-xs-offset-1">
-		<h2>Name: {{data.name}}</h2>
-		<h2>Email: {{data.email}}</h2>
-		<h2>Phone: {{data.phone}}</h2>
+<div class="container">
+	<div class="row info">
+	    <h1 class="text-center page-header">This is Who I am</h1>
+		<div class="col-xs-6" id="address">
+			<h2>Name: {{vm.info[0].name}}</h2>
+			<h2>Email: {{vm.info[0].email}}</h2>
+			<h2>Phone: {{vm.info[0].phone}}</h2>
+		</div>
 	</div>
-	<div class="col-xs-6 col-xs-offset-2">
+</div>
+
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-1" id="skill">
 		<h2>My Skills</h2>
-		<h3>{{data.skills}}</h3>
+		<blockquote>
+			<h3>{{vm.info[0].skills}}</h3>
+		</blockquote>
 	</div>
-	<div class="col-xs-10 col-xs-offset-2">
-		<h2>A Little Bit About Me</h2>
-		<strong>{{data.info}}</strong>
+</div>
+
+<div class="well">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-2" id="about">
+			<h2>A Little Bit About Me</h2>
+			<strong>{{vm.info[0].info}}</strong>
+		</div>
 	</div>
 </div>

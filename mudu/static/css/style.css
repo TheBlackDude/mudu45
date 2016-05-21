@@ -25,10 +25,15 @@ img {
 	height: 627px;
 }
 
+/*#address, #skill, #about {
+	border: 2px solid orange;
+}*/
+
 #snackbar {
-	color: green;
+	color: white;
+	background: green;
 	font-size: 20px;
-	font-weight: bold;
+	border: 15px solid green;
 }
 
 footer {

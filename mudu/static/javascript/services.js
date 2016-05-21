@@ -23,9 +23,9 @@
 			}).success(function(data) {
 				Snackbar.show('<p id="snackbar">message sent successfully</p>');
 
-				setTimeout(function(){
+				/*setTimeout(function(){
 					window.location = '/';
-				}, 1000);
+				}, 1000);*/
 				
 			}).error(function(err) {
 				Snackbar.error(err);
