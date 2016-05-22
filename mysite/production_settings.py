@@ -26,12 +26,6 @@ def get_env_variable(var_name):
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ADMINS = (
-   ('Osman Jalloh', 'omudu45@gmail.com'),
-)
-
-MANAGERS = ADMINS
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
