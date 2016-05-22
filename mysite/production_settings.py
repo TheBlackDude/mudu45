@@ -16,28 +16,28 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 # function for setting environment variables
-#def get_env_variable(var_name):
-#   """GET The environment variable or return exception."""
-#   try:
-#        return os.environ[var_name]
-#    except KeyError:
-#        error_msg = "Set The {} environment variable".format(var_name)
-#        raise ImproperlyConfigured(error_msg)
+def get_env_variable(var_name):
+    """GET The environment variable or return exception."""
+    try:
+       return os.environ[var_name]
+    except KeyError:
+       error_msg = "Set The {} environment variable".format(var_name)
+       raise ImproperlyConfigured(error_msg)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#ADMINS = (
-#    ('Osman Jalloh', 'omudu45@gmail.com'),
-#)
+ADMINS = (
+   ('Osman Jalloh', 'omudu45@gmail.com'),
+)
 
-#MANAGERS = ADMINS
+MANAGERS = ADMINS
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a#@!llid56$elgld-ldls!ldls(lldsl%lslshgnbldt&#)-f&'
+SECRET_KEY = get_env_variable("SECRET_KEY") #'a#@!llid56$elgld-ldls!ldls(lldsl%lslshgnbldt&#)-f&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -135,26 +135,22 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 # Logging
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse'
-#         }
-#     },
-#     'handlers': {
-#         'mail_admins': {
-#             'level': 'INFO',
-#             'filters': ['require_debug_false'],
-#             'class': 'django.utils.log.AdminEmailHandler'
-#         }
-#     },
-#     'loggers': {
-#         'django.request': {
-#             'handlers': ['mail_admins'],
-#             'level': 'INFO',
-#             'propagate': True,
-#         },
-#     }
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+        },
+        'mudu': {
+            'handlers': ['console'],
+        },
+    },
+    'root': {'level': 'INFO'},
+}
