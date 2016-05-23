@@ -128,6 +128,9 @@ SECURE_SSL_HOST = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+# Honor the 'X-Forwarded-Proto' header for request.is_secure
+SECURE_PROXY_SLL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Logging
 LOGGING = {
     'version': 1,
