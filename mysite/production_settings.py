@@ -16,13 +16,13 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 # function for setting environment variables
-# def get_env_variable(var_name):
-#     """GET The environment variable or return exception."""
-#     try:
-#        return os.environ[var_name]
-#     except KeyError:
-#        error_msg = "Set The {} environment variable".format(var_name)
-#        raise ImproperlyConfigured(error_msg)
+def get_env_variable(var_name):
+    """GET The environment variable or return exception."""
+    try:
+       return os.environ[var_name]
+    except KeyError:
+       error_msg = "Set The {} environment variable".format(var_name)
+       raise ImproperlyConfigured(error_msg)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ugyu(1_kc$@j3@sc)%xywmk#nx*am!ew6zpg$erv-^mf0nubju' #get_env_variable("SECRET_KEY")
+SECRET_KEY = get_env_variable("SECRET_KEY") #'ugyu(1_kc$@j3@sc)%xywmk#nx*am!ew6zpg$erv-^mf0nubju'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
