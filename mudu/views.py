@@ -13,7 +13,7 @@ class IndexPage(TemplateView):
 
 	@method_decorator(ensure_csrf_cookie)
 	def dispatch(self, *args, **kwargs):
-		return super(IndexPage, dispatch).dispatch(*args, **kwargs)
+		return super(IndexPage, self).dispatch(*args, **kwargs)
 
 class Api(APIView):
 	"""
