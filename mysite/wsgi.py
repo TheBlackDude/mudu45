@@ -9,12 +9,12 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 
 import os
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.production_settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.heroku_settings'
 
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.production_settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.heroku_settings")
 
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
